@@ -1,0 +1,65 @@
+{
+    "name": "robertogallea/pulse-api",
+    "description": "Add an API layer to Laravel Pulse metrics",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Robertogallea\\PulseApi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Roberto Gallea",
+            "email": "write@robertogallea.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^9.5",
+        "pestphp/pest": "^3.5",
+        "laravel/pint": "^1.18",
+        "larastan/larastan": "^2.0"
+    },
+    "require": {
+        "laravel/pulse": "^1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "@build",
+            "@php vendor/bin/testbench serve --ansi"
+        ],
+        "lint": [
+            "@php vendor/bin/phpstan analyse --verbose --ansi"
+        ],
+        "test": [
+            "@php vendor/bin/pest"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Robertogallea\\PulseApi\\PulseAPIServiceProvider"
+            ]
+        }
+    }
+}
