@@ -64,7 +64,7 @@ integrate the default ones by editing the `resources` configuration section:
 
 ### Including recorders configuration in json response
 
-Laravel Pulse cards use configuration to adjust the rendering of the card view. This cannot be required or not useful in
+Laravel Pulse cards use configuration to adjust the rendering of the card view. This may be not required or not useful in
 api but is enabled by default.
 You can disable the configuration exposure by proper setting of the `include-config` configuration key to `false`:
 
