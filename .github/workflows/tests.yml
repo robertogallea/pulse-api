@@ -26,6 +26,6 @@ jobs:
           DB_DATABASE: ":memory:"
         run: |
           composer prepare
-          rm vendor/orchestra/testbench-core/laravel/database/migrations/*.php
+          rm -rf vendor/orchestra/testbench-core/laravel/database
           vendor/bin/testbench vendor:publish --tag=pulse-migrations
           vendor/bin/pest --compact --coverage --min=80
