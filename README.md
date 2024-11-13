@@ -29,7 +29,7 @@ By default, the available types are the one provided by Pulse itself:
 - `slow_jobs`
 - `slow_outgoing_requests`
 
-However, you can integrate your own by mimicking any Pulse card or by your own implementation.
+However, you can integrate your own by mimicking any Pulse card or by using your own implementation.
 
 ## Configuration
 
