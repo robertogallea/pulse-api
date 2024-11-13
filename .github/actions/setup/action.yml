@@ -50,5 +50,5 @@ runs:
       uses: actions/cache@v4.1.2
       with:
         key: composer-cache-${{ hashFiles('**/composer.lock') }}
-        path: vendor/
-#        restore-keys: composer-cache-
+        path: ${{ steps.composer-cache-dir.outputs.dir }}
+        restore-keys: composer-cache-
