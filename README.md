@@ -2,6 +2,8 @@
 
 This package provides the very same information from [Laravel Pulse](https://pulse.laravel.com) as a JSON api endpoint.
 
+![17320370610423445938023068352330](https://github.com/user-attachments/assets/0ea30d54-97cc-40b6-8059-5afbe3b7bfb4)
+
 ## Installation
 
 You can install the package via composer:
