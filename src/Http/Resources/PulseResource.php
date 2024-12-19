@@ -8,9 +8,13 @@ use Laravel\Pulse\Facades\Pulse;
 use Laravel\Pulse\Livewire\Concerns\HasPeriod;
 use Laravel\Pulse\Livewire\Concerns\RemembersQueries;
 
-class PulseResource extends JsonResource
-{
+class PulseResource extends JsonResource {
     use HasPeriod, RemembersQueries;
+
+    public function __construct($resource, $period = null) {
+        parent::__construct($resource);
+        $this->period = $period;
+    }
 
     /**
      * Retrieve values for the given type.
@@ -22,8 +26,7 @@ class PulseResource extends JsonResource
      *     value: string
      * }>
      */
-    protected function values(string $type, ?array $keys = null): Collection
-    {
+    protected function values(string $type, ?array $keys = null): Collection {
         return Pulse::values($type, $keys);
     }
 
@@ -34,8 +37,7 @@ class PulseResource extends JsonResource
      * @param  'count'|'min'|'max'|'sum'|'avg'  $aggregate
      * @return \Illuminate\Support\Collection<string, \Illuminate\Support\Collection<string, \Illuminate\Support\Collection<string, int|null>>>
      */
-    protected function graph(array $types, string $aggregate): Collection
-    {
+    protected function graph(array $types, string $aggregate): Collection {
         return Pulse::graph($types, $aggregate, $this->periodAsInterval());
     }
 
