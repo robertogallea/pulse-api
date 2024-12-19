@@ -12,6 +12,12 @@ class PulseResource extends JsonResource
 {
     use HasPeriod, RemembersQueries;
 
+    public function __construct($resource, $period = null)
+    {
+        parent::__construct($resource);
+        $this->period = $period;
+    }
+
     /**
      * Retrieve values for the given type.
      *
