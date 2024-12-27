@@ -17,7 +17,7 @@ class DashboardController
     public function show(Request $request, string $type)
     {
         $period = $request->query('period', '');
-        if (array_key_exists($type, config('pulse-api.resources')->toArray())) {
+        if (array_key_exists($type, config('pulse-api.resources'))) {
             return new (config('pulse-api.resources.'.$type))(null, $period);
         }
 

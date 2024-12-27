@@ -61,7 +61,7 @@ integrate the default ones by editing the `resources` configuration section:
 'resources' =>
     \Robertogallea\PulseApi\Services\PulseAPI::getDefaultResources()->merge([
         // Add your custom resources
-    ]),
+    ])->toArray(),
 ```
 
 ### Including recorders configuration in json response

@@ -70,6 +70,6 @@ function createFakeResourceClass()
 
     Config::set(
         'pulse-api.resources',
-        collect(['fake-resource' => FakeResource::class])
+        ['fake-resource' => FakeResource::class]
     );
 }

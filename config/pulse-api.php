@@ -67,6 +67,6 @@ return [
 
     'resources' => \Robertogallea\PulseApi\Services\PulseAPI::getDefaultResources()->merge([
         // Add your custom resources
-    ]),
+    ])->toArray(),
 
 ];
