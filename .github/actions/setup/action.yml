@@ -47,7 +47,7 @@ runs:
       shell: bash
 
     - name: Cache dependencies
-      uses: actions/cache@v4.1.2
+      uses: actions/cache@v4.2
       with:
         key: composer-cache-${{ hashFiles('**/composer.lock') }}
         path: ${{ steps.composer-cache-dir.outputs.dir }}
